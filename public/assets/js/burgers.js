@@ -38,6 +38,21 @@ $(".eat-burger").on("click", function(){
 })
 
 
+//regurg the burg, set devoured = false
+
+$(".gurg-burger").on("click", function(){
+  var burgerId = $(this).attr("data-id");
+  var devoured = $(this).attr("data-devoured");
+
+  $.ajax({
+    url: "/api/burgers/" + burgerId,
+    method: "PUT",
+    data: {
+      devoured: devoured
+    }
+  }).then(() => location.reload())
+} )
+
 
 
 

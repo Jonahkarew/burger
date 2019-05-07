@@ -54,6 +54,9 @@
               {{#if devoured}}
                 <li class="list-group-item text-center">
                   {{burger_name}}
+                  <span class="ml-auto">
+                  <button data-id="{{id}}" data-devoured="false" class="btn btn-success gurg-burger">Regurg the Burg!</button>
+                </span>
                 </li>
               {{/if}}
             {{/each}}
