@@ -10,14 +10,14 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 
-
+app.use(express.static("public"));
 //set up handlebars engine
-app.engine("handlebars", exphbs({defaultLayou: "main"}));
+app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 //get our routes
-require("./routes/htmlRoutes")(app);
-require("./routes/apiRoutes")(app);
+// require("./controllers/htmlRoutes")(app);
+require("./controllers/burgers_controller")(app);
 
 
-app.listen(PORT, () => console.log("listening on port:"+PORT));
+app.listen(PORT, () => console.log("listening on port:" + PORT));
