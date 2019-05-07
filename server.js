@@ -19,5 +19,5 @@ app.set("view engine", "handlebars");
 require("./controllers/burgers_html")(app);
 require("./controllers/burgers_controller")(app);
 
-
+//activate the server
 app.listen(PORT, () => console.log("listening on port:" + PORT));

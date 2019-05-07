@@ -1,6 +1,6 @@
 const burgers = require("../config/orm")
 
-
+//code to send data to page
 module.exports = (app) => {
 
 app.get("/", function(req, res){
@@ -14,6 +14,4 @@ app.get("/", function(req, res){
     res.json(err);
   });
 });
-
-
 };

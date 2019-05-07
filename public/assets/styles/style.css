@@ -1,0 +1,10 @@
+body {
+  background: #E8A82A;
+};
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #FFD13A;
+  border-radius: .3rem;
+}
