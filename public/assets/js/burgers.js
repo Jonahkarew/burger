@@ -34,7 +34,7 @@ $(".eat-burger").on("click", function(){
     data: {
       devoured: devoured
     }
-  }).then(() => location.reload)
+  }).then(() => location.reload())
 })
 
 
