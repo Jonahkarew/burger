@@ -1,10 +1,10 @@
-var db = require("../models")
+const burgers = require("../config/orm")
 
 //code to send data to page
 module.exports = (app) => {
 
 app.get("/", function(req, res){
-  db.burgers.findAll()
+  burgers.findAll()
 
   .then(dbBurgerData => {
     res.render("index", {burgerData: dbBurgerData})

@@ -2,8 +2,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 
-var db = require("./models")
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -22,8 +20,4 @@ require("./controllers/burgers_html")(app);
 require("./controllers/burgers_controller")(app);
 
 //activate the server
-db.sequelize.sync({force:false}).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-});
+app.listen(PORT, () => console.log("listening on port:" + PORT));

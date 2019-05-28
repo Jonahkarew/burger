@@ -1,10 +1,10 @@
-var db = require("../models")
+const burgers = require("../config/orm.js");
 
 module.exports = app => {
 //get all the burgers cus we need all the burgers
 app.get("/api/burgers", function(req, res) {
-  db.burgers.findAll()
-  .then(dbBurgerData =>  {res.json(dbBurgerData)})
+  burgers.findAll()
+  .then(dbBurgerData => res.json(dbBurgerData))
   .catch(err => {
     console.log(err)
     res.json(err)
@@ -17,7 +17,7 @@ app.post("/api/burgers", function(req, res) {
   
   
   
-  db.burgers.create(req.body)
+  burgers.create(req.body)
   .then(dbBurgerData => res.json(dbBurgerData))
   .catch(err => {
     console.log(err);
@@ -28,11 +28,7 @@ app.post("/api/burgers", function(req, res) {
 
 //route to get burger by id
 app.get("/api/burgers/:id", function(req, res){
-  db.burgers.findById({
-    where: {
-      id: req.body.id
-    }
-  })
+  burgers.findById(req.params.id)
   .then(dbBurgerData => res.json(dbBurgerData))
   .catch(err => {
     console.log(err);
@@ -43,11 +39,7 @@ app.get("/api/burgers/:id", function(req, res){
 
 //route to update burger by id
 app.put("/api/burgers/:id", function(req, res){
-  db.burgers.update({devoured: req.body.devoured},{
-    where:{
-      id: req.params.id
-    }
-    })
+  burgers.update(req.body.devoured, req.params.id)
   .then(dbBurgerData => res.json(dbBurgerData))
   .catch(err => {
     console.log(err);

@@ -1,14 +1,12 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "deployed link:",
+  "description": "",
   "main": "server.js",
   "dependencies": {
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
-    "mysql": "^2.17.1",
-    "mysql2": "^1.6.5",
-    "sequelize": "^5.8.5"
+    "mysql": "^2.17.1"
   },
   "devDependencies": {},
   "scripts": {

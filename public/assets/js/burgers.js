@@ -35,9 +35,7 @@ $(".eat-burger").on("click", function(){
       devoured: devoured
     }
   }).then(() => location.reload())
-  .catch(err => console.log(err))
-}
-)
+})
 
 
 //regurg the burg, set devoured = false
@@ -53,8 +51,7 @@ $(".gurg-burger").on("click", function(){
       devoured: devoured
     }
   }).then(() => location.reload())
-} 
-)
+} )
 
 
 
